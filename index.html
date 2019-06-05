@@ -21,14 +21,18 @@
         // set the answer array 
         var gameAnsrs = ['duster', 'cuda', 'mustang', 'camero', 'challenger', 'fastback', 'scatpack', 'bigblock', 'smallblock', 'stroker', 'firebird', 'blown', 'carburetor', 'fuelinjector', 'torque'];
         console.log(gameAnsrs);
+
         var wordSpace = document.getElementById("word-length");
-        var Lives = 15;
+        var wrongGuess = document.getElementById("wrong-choices");
+        var lifesRemain = document.getElementById("total-lifes");
+        var lives = 15;
         var dashFill;
         var wins = 0;
-
+        var incorrectGuess;
 
         function newGame() {
             dashFill = [];
+            incorrectGuess = [];
             //have the compute pick and word
             computerPick = gameAnsrs[Math.floor(Math.random() * gameAnsrs.length)];
             console.log('computer picks ' + computerPick);
@@ -41,6 +45,8 @@
             }
             console.log(dashFill);
             wordSpace.textContent = dashFill;
+            wrongGuess.textContent="Wrong Letters";
+            lifesRemain.textContent="Remaining Lifes"+lives;
 
 
             document.onkeydown = function (event) {
@@ -50,19 +56,26 @@
                     var c = answerLetters[i];
                     if (c === userGuess) {
                         dashFill[i] = c;
-                        
+
                         wordSpace.textContent = dashFill;
-                        win()
-                    }
+                        win();
+                    } else 
+                        (incorrectGuess.indexOf(userGuess) === -1)
+                        incorrectGuess.push(userGuess);
+                    lives--
+                    wrongGuess.textContent = "Wrong Letters "+incorrectGuess;
+                    lifesRemain.textContent="Remaining Lifes"+lives;
+
                 };
             };
         };
+
 
         function win() {
 
             if (dashFill.toString() == answerLetters.toString()) {
                 wins++
-                alert("congrats")
+                alert("congrats gearhead you wrenched the " + computerPick)
                 newGame()
             }
             console.log(dashFill.toString());
@@ -70,7 +83,15 @@
             wins++
         };
 
+        function wrong() {
+            incorrectGuess="";
+            incorrectGuess[i].push(userGuess);
+            lives--
+            wrongGuess.textContent = incorrectGuess;
+        };
 
+
+        3
 
         newGame();
         win();
