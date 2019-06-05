@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title> Grease Monkey Hangman </title>
+
+</head>
+
+<body>
+
+    <p id="start">
+        <h1>Press any key to begin</h1>
+    </p>
+    <p id='word-length'></p>
+    <p id="total-lifes"></p>
+    <p id="wrong-choices"></p>
+
+    <script>
+
+        // set the answer array 
+        var gameAnsrs = ['duster', 'cuda', 'mustang', 'camero', 'challenger', 'fastback', 'scatpack', 'bigblock', 'smallblock', 'stroker', 'firebird', 'blown', 'carburetor', 'fuelinjector', 'torque'];
+        console.log(gameAnsrs);
+        var wordSpace = document.getElementById("word-length");
+        var Lives = 15;
+        var dashFill;
+        var wins = 0;
+
+
+        function newGame() {
+            dashFill = [];
+            //have the compute pick and word
+            computerPick = gameAnsrs[Math.floor(Math.random() * gameAnsrs.length)];
+            console.log('computer picks ' + computerPick);
+            //split the computer pick into indivdual letters
+            answerLetters = computerPick.split("");
+            console.log(answerLetters)
+            //assign the dashes for the word
+            for (var i = 0; i < answerLetters.length; i++) {
+                dashFill[i] = (" _ ");
+            }
+            console.log(dashFill);
+            wordSpace.textContent = dashFill;
+
+
+            document.onkeydown = function (event) {
+                var userGuess = event.key;
+                console.log(event.key);
+                for (var i = 0; i < answerLetters.length; i++) {
+                    var c = answerLetters[i];
+                    if (c === userGuess) {
+                        dashFill[i] = c;
+                        
+                        wordSpace.textContent = dashFill;
+                        win()
+                    }
+                };
+            };
+        };
+
+        function win() {
+
+            if (dashFill.toString() == answerLetters.toString()) {
+                wins++
+                alert("congrats")
+                newGame()
+            }
+            console.log(dashFill.toString());
+            console.log(answerLetters.toString());
+            wins++
+        };
+
+
+
+        newGame();
+        win();
+
+
+
+
+
+
+
+    </script>
+</body>
+
+
+
+
+
+
+</html>
