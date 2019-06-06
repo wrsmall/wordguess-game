@@ -48,8 +48,8 @@
 
 
 
-                } else  {
-                            (incorrectGuess.indexOf(userGuess) === -1)
+                } else if( 
+                            incorrectGuess.indexOf(userGuess) === -1){
                             incorrectGuess.push(userGuess);
                             lives--;
                             win();
