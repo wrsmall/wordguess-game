@@ -45,8 +45,8 @@
             }
             console.log(dashFill);
             wordSpace.textContent = dashFill;
-            wrongGuess.textContent="Wrong Letters";
-            lifesRemain.textContent="Remaining Lifes"+lives;
+            wrongGuess.textContent = "Wrong Letters";
+            lifesRemain.textContent = "Remaining Lifes" + lives;
 
 
             document.onkeydown = function (event) {
@@ -54,21 +54,24 @@
                 console.log(event.key);
                 for (var i = 0; i < answerLetters.length; i++) {
                     var c = answerLetters[i];
+                    console.log(c);
                     if (c === userGuess) {
                         dashFill[i] = c;
-
                         wordSpace.textContent = dashFill;
                         win();
-                    } else 
-                        (incorrectGuess.indexOf(userGuess) === -1)
-                        incorrectGuess.push(userGuess);
-                    lives--
-                    wrongGuess.textContent = "Wrong Letters "+incorrectGuess;
-                    lifesRemain.textContent="Remaining Lifes"+lives;
 
+                    } else {
+                        (incorrectGuess.indexOf(userGuess) === -1) 
+                        incorrectGuess.push(userGuess);};
+                        lives--;
+                        wrongGuess.textContent = "Wrong Letters " + incorrectGuess.toString();
+                        lifesRemain.textContent = "Remaining Lifes" + lives;
+                    };
                 };
             };
-        };
+    
+        
+
 
 
         function win() {
@@ -77,14 +80,14 @@
                 wins++
                 alert("congrats gearhead you wrenched the " + computerPick)
                 newGame()
-            }
+            } if (lives === 0) { }
             console.log(dashFill.toString());
             console.log(answerLetters.toString());
-            wins++
-        };
+
+        }
 
         function wrong() {
-            incorrectGuess="";
+            incorrectGuess = "";
             incorrectGuess[i].push(userGuess);
             lives--
             wrongGuess.textContent = incorrectGuess;
