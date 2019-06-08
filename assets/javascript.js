@@ -11,8 +11,8 @@
         var incorrectGuess;
 
         function newGame() {
-            dashFill = [];
-            incorrectGuess = [];
+            dashFill=[];
+            incorrectGuess=[];
             lives=15;
             //have the compute pick and word
             computerPick = gameAnsrs[Math.floor(Math.random() * gameAnsrs.length)];
@@ -66,17 +66,23 @@
 
         
         function win() {
-
-            if (dashFill.toString() == answerLetters.toString()) {
+            if (answerLetters.toString() === dashFill.toString()) {
                 wins++
-                setTimeout (function(){alert("congrats gearhead you wrenched the " + computerPick)
-                newGame()},200)
-            } if (lives === 0) {
+                alert("congrats gearhead you wrenched the " + computerPick)
+                newGame()
+                
+            } else if (lives === 0) {
                 setTimeout (function(){alert("sorry the "+computerPick+' drove by')
                 newGame()},200)
              }
-            console.log(dashFill.toString());
-            console.log(answerLetters.toString());
+
+            function loss(){
+                if (lives === 0) {
+                    setTimeout (function(){alert("sorry the "+computerPick+' drove by')
+                    newGame()},200)
+                 }
+            }
+            
 
         }
 
