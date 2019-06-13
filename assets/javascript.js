@@ -25,7 +25,7 @@
                 dashFill[i] = (" _ ");
             }
             console.log(dashFill);
-            wordSpace.textContent = dashFill;
+            wordSpace.textContent = dashFill.join(" ");
             wrongGuess.textContent = "Wrong Letters";
             lifesRemain.textContent = "Remaining Lifes " + lives;
 
@@ -40,7 +40,7 @@
                         console.log(c);
                         if (c === userGuess) 
                             dashFill[i] = c;
-                            wordSpace.textContent = dashFill;
+                            wordSpace.textContent = dashFill.join(" ");
                             win();
                         };
                     
