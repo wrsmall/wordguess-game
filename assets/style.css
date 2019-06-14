@@ -1,0 +1,29 @@
+
+.titlefont{
+    font-family: 'Permanent Marker', cursive;
+   color: crimson;
+   
+}
+.bg-mycolor{
+    background-color: mintcream;
+}
+.lightgrey{
+    background-color: slategrey;
+}
+.bgimage{
+    background-image: url(../assets/images/1969camero.jpg );
+    background-size: cover;
+    
+    
+    
+}
+.margin{
+    padding: 5%;
+    padding-bottom: 15%;   
+}
+.sizing{
+    width:95%;
+    margin: auto;
+    margin-top:5%;
+}
+

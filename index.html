@@ -4,22 +4,49 @@
 <head>
 
     <title> Grease Monkey Hangman </title>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 
-<body>
+<body class="bg-mycolor">
+    <div class="card">
+        <div class="card-header lightgrey rounded mt-1 ml-1 mr-1">
+            <p class="titlefont h1 text-center">Grease Monkey Hangman</p>
+        </div>
+    </div>
 
-    <p id="start">
-        <h1>Press any key to begin</h1>
-    </p>
-    <p id='word-length'></p>
-    <p id="total-lifes"></p>
-    <p id="wrong-choices"></p>
+    <div class="jumbotron margin sizing bgimage">
+        <div class="row p-5">
 
-    <script src="assets/javascript.js"></script>
+        </div>
+        <div class="row p-5">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <p class="center h5 p-5" id="start">
+                    Press any key to begin
+                </p>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5">
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 p-3 h3 titlefont">
+                <p id='word-length'></p>
+                <p id="total-lifes"></p>
+                <p id="wrong-choices"></p>
+            </div>
+            <div class="row p-5">
+            </div>
+            <div class="row p-5">
+            </div>
+            <div class="row p-5">
+            </div>
+            
+        </div>
+        <script src="assets/javascript.js"></script>
 
 
-    
+
 </body>
 
 
