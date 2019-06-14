@@ -33,7 +33,7 @@ function newGame() {
     console.log(dashFill);
     wordSpace.textContent = dashFill.join(" ");
     wrongGuess.textContent = "Wrong Letters";
-    lifesRemain.textContent = "Remaining Lifes " + lives;
+    lifesRemain.textContent = "Remaining Lives " + lives;
     totalWins.textContent = "Wins " + wins;
     totalLosses.textContent = "Losses " + losses;
     startGame();
