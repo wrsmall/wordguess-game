@@ -84,18 +84,12 @@ function win() {
         newGame()
 
     } else if (lives === 0) {
-        alert("sorry the " + computerPick + ' drove by')
+        losses++
+        directions.textContent ="sorry the " + computerPick + ' drove by';
         newGame();
     }
 
-    function loss() {
-        if (lives === 0) {
-            setTimeout(function () {
-                directions.textContent ="sorry the " + computerPick + ' drove by';
-                newGame()
-            }, 200)
-        }
-    }
+
 
 
 }
