@@ -14,8 +14,8 @@ var losses = 0;
 var directions= document.getElementById("startMenu");
 var incorrectGuess;
 directions.textContent = "Press any key to begin";
-
-
+var torque= new Audio("assets/sounds/impact.mp3");
+console.log(torque);
 function newGame() {
     dashFill = [];
     incorrectGuess = [];
@@ -52,6 +52,7 @@ function startGame() {
                 console.log(c);
                 if (c === userGuess)
                     dashFill[i] = c;
+                torque.play();
                 wordSpace.textContent = dashFill.join(" ");
                 win();
             };
